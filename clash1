@@ -23,13 +23,21 @@ proxies:
   udp: true
   sni: sgbug.infpro.top
   skip-cert-verify: false
-  - name: 东京-azhk
+- name: 东京-azhk
   type: trojan
   server: azhk.infpro.top
   port: 52824
   password: Liangcye19970528520
   udp: true
   sni: tkbug.infpro.top
+  skip-cert-verify: false
+  - name: 东京-泸日
+  type: trojan
+  server: china.changlian-axecc.898868.xyz
+  port: 52806
+  password: Liangcye19970528520
+  udp: true
+  sni: jparm.infpro.top
   skip-cert-verify: false
 proxy-groups:
 - name: Auto - UrlTest
@@ -38,6 +46,8 @@ proxy-groups:
   - 香港-莞港
   - 新加坡-广港
   - 新加坡-莞港
+  - 东京-azhk
+  - 东京-泸日
   url: https://cp.cloudflare.com/generate_204
   interval: '600'
   tolerance: '150'
@@ -50,6 +60,7 @@ proxy-groups:
   - 新加坡-广港
   - 新加坡-莞港
   - 东京-azhk
+  - 东京-泸日
 - name: Domestic
   type: select
   proxies:
