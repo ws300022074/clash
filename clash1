@@ -65,6 +65,165 @@ proxy-groups:
   - 香港-莞港
   - 新加坡-广港
   - 新加坡-莞港
+- name: Google FCM
+  type: select
+  proxies:
+  - DIRECT
+  - Proxy
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Scholar
+  type: select
+  proxies:
+  - DIRECT
+  - Proxy
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Bilibili
+  type: select
+  proxies:
+  - Asian TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Bahamut
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: HBO Max
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: HBO Go
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Pornhub
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Netflix
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Disney
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Youtube
+  type: select
+  disable-udp: true
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Discovery Plus
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: DAZN
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Spotify
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Steam
+  type: select
+  proxies:
+  - DIRECT
+  - Proxy
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: AdBlock
+  type: select
+  proxies:
+  - REJECT
+  - DIRECT
+  - Proxy
+- name: Asian TV
+  type: select
+  proxies:
+  - DIRECT
+  - Proxy
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Global TV
+  type: select
+  proxies:
+  - Proxy
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Speedtest
+  type: select
+  proxies:
+  - Proxy
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Telegram
+  type: select
+  proxies:
+  - Proxy
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: PayPal
+  type: select
+  proxies:
+  - DIRECT
+  - Proxy
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
 redir-port: 7892
 tproxy-port: 7895
 port: 7890
