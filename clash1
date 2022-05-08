@@ -23,6 +23,14 @@ proxies:
   udp: true
   sni: sgbug.infpro.top
   skip-cert-verify: false
+  - name: 东京-azhk
+  type: trojan
+  server: azhk.infpro.top
+  port: 52824
+  password: Liangcye19970528520
+  udp: true
+  sni: tkbug.infpro.top
+  skip-cert-verify: false
 proxy-groups:
 - name: Auto - UrlTest
   type: url-test
