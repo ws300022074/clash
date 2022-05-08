@@ -1,226 +1,739 @@
+---
 proxies:
-  - name: "香港-莞港"
-    type: ss
-    server: "china.ct.a.898868.xyz"
-    port: 52801
-    cipher: aes-256-gcm
-    password: "Liangcye19970528520"
-    udp: true
-  - name: "新加坡-广港"
-    type: trojan
-    server: "relay.gzbgppro.entrance1-fp.icu"
-    port: 52810
-    password: "Liangcye19970528520"
-    udp: true
-    sni: "sgarm01.infpro.top"
-    skip-cert-verify: false
-  - name: "新加坡-莞港"
-    type: trojan
-    server: "china.ct.a.898868.xyz"
-    port: 52814
-    password: "Liangcye19970528520"
-    udp: true
-    sni: "sgbug.infpro.top"
-    skip-cert-verify: false
+- name: 香港-莞港
+  type: ss
+  server: china.ct.a.898868.xyz
+  port: 52801
+  cipher: aes-256-gcm
+  password: Liangcye19970528520
+  udp: true
+- name: 新加坡-广港
+  type: trojan
+  server: relay.gzbgppro.entrance1-fp.icu
+  port: 52810
+  password: Liangcye19970528520
+  udp: true
+  sni: sgarm01.infpro.top
+  skip-cert-verify: false
+- name: 新加坡-莞港
+  type: trojan
+  server: china.ct.a.898868.xyz
+  port: 52814
+  password: Liangcye19970528520
+  udp: true
+  sni: sgbug.infpro.top
+  skip-cert-verify: false
 proxy-groups:
-  - name: Auto - UrlTest
-    type: url-test
-    proxies:
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-    url: https://cp.cloudflare.com/generate_204
-    interval: "600"
-    tolerance: "150"
-  - name: Proxy
-    type: select
-    proxies:
-      - Auto - UrlTest
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Domestic
-    type: select
-    proxies:
-      - DIRECT
-      - Proxy
-  - name: Others
-    type: select
-    proxies:
-      - Proxy
-      - DIRECT
-      - Domestic
-  - name: Microsoft
-    type: select
-    proxies:
-      - DIRECT
-      - Proxy
-  - name: Apple
-    type: select
-    proxies:
-      - DIRECT
-      - Proxy
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Google FCM
-    type: select
-    proxies:
-      - DIRECT
-      - Proxy
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Scholar
-    type: select
-    proxies:
-      - DIRECT
-      - Proxy
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Bilibili
-    type: select
-    proxies:
-      - Asian TV
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Bahamut
-    type: select
-    proxies:
-      - Global TV
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: HBO Max
-    type: select
-    proxies:
-      - Global TV
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: HBO Go
-    type: select
-    proxies:
-      - Global TV
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Pornhub
-    type: select
-    proxies:
-      - Global TV
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Netflix
-    type: select
-    proxies:
-      - Global TV
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Disney
-    type: select
-    proxies:
-      - Global TV
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Youtube
-    type: select
-    disable-udp: true
-    proxies:
-      - Global TV
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Discovery Plus
-    type: select
-    proxies:
-      - Global TV
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: DAZN
-    type: select
-    proxies:
-      - Global TV
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Spotify
-    type: select
-    proxies:
-      - Global TV
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Steam
-    type: select
-    proxies:
-      - DIRECT
-      - Proxy
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: AdBlock
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-      - Proxy
-  - name: Asian TV
-    type: select
-    proxies:
-      - DIRECT
-      - Proxy
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Global TV
-    type: select
-    proxies:
-      - Proxy
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Speedtest
-    type: select
-    proxies:
-      - Proxy
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: Telegram
-    type: select
-    proxies:
-      - Proxy
-      - DIRECT
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
-  - name: PayPal
-    type: select
-    proxies:
-      - DIRECT
-      - Proxy
-      - "香港-莞港"
-      - "新加坡-广港"
-      - "新加坡-莞港"
+- name: Auto - UrlTest
+  type: url-test
+  proxies:
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+  url: https://cp.cloudflare.com/generate_204
+  interval: '600'
+  tolerance: '150'
+- name: Proxy
+  type: select
+  proxies:
+  - Auto - UrlTest
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Domestic
+  type: select
+  proxies:
+  - DIRECT
+  - Proxy
+- name: Others
+  type: select
+  proxies:
+  - Proxy
+  - DIRECT
+  - Domestic
+- name: Microsoft
+  type: select
+  proxies:
+  - DIRECT
+  - Proxy
+- name: Apple
+  type: select
+  proxies:
+  - DIRECT
+  - Proxy
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Google FCM
+  type: select
+  proxies:
+  - DIRECT
+  - Proxy
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Scholar
+  type: select
+  proxies:
+  - DIRECT
+  - Proxy
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Bilibili
+  type: select
+  proxies:
+  - Asian TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Bahamut
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: HBO Max
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: HBO Go
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Pornhub
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Netflix
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Disney
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Youtube
+  type: select
+  disable-udp: true
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Discovery Plus
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: DAZN
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Spotify
+  type: select
+  proxies:
+  - Global TV
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Steam
+  type: select
+  proxies:
+  - DIRECT
+  - Proxy
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: AdBlock
+  type: select
+  proxies:
+  - REJECT
+  - DIRECT
+  - Proxy
+- name: Asian TV
+  type: select
+  proxies:
+  - DIRECT
+  - Proxy
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Global TV
+  type: select
+  proxies:
+  - Proxy
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Speedtest
+  type: select
+  proxies:
+  - Proxy
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: Telegram
+  type: select
+  proxies:
+  - Proxy
+  - DIRECT
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+- name: PayPal
+  type: select
+  proxies:
+  - DIRECT
+  - Proxy
+  - 香港-莞港
+  - 新加坡-广港
+  - 新加坡-莞港
+redir-port: 7892
+tproxy-port: 7895
+port: 7890
+socks-port: 7891
+mixed-port: 7893
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: '123456'
+bind-address: "*"
+external-ui: "/usr/share/openclash/dashboard"
+ipv6: false
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  listen: 0.0.0.0:7874
+  nameserver:
+  - dhcp://"eth0.2"
+  - 192.168.3.1
+  - 114.114.114.114
+  - 119.29.29.29
+  - https://doh.pub/dns-query
+  - https://dns.alidns.com/dns-query
+  fallback:
+  - https://dns.cloudflare.com/dns-query
+  - https://public.dns.iij.jp/dns-query
+  - https://jp.tiar.app/dns-query
+  - https://jp.tiarap.org/dns-query
+  - tls://dot.tiar.app
+  fake-ip-filter:
+  - "+.*"
+  default-nameserver:
+  - 192.168.3.1
+  - 114.114.114.114
+  - 119.29.29.29
+tun:
+  enable: true
+  stack: system
+  auto-route: false
+  auto-detect-interface: false
+  dns-hijack:
+  - tcp://any:53
+profile:
+  store-selected: true
+  store-fake-ip: true
+rule-providers:
+  Reject:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Reject.yaml
+    path: "./rule_provider/Reject"
+    interval: 86400
+  Special:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Special.yaml
+    path: "./rule_provider/Special"
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Netflix.yaml
+    path: "./rule_provider/Netflix"
+    interval: 86400
+  Spotify:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Spotify.yaml
+    path: "./rule_provider/Spotify"
+    interval: 86400
+  YouTube:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/YouTube.yaml
+    path: "./rule_provider/YouTube"
+    interval: 86400
+  Bilibili:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Bilibili.yaml
+    path: "./rule_provider/Bilibili"
+    interval: 86400
+  IQ:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/IQ.yaml
+    path: "./rule_provider/IQI"
+    interval: 86400
+  IQIYI:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/IQIYI.yaml
+    path: "./rule_provider/IQYI"
+    interval: 86400
+  Letv:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Letv.yaml
+    path: "./rule_provider/Letv"
+    interval: 86400
+  Netease Music:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Netease%20Music.yaml
+    path: "./rule_provider/Netease_Music"
+    interval: 86400
+  Tencent Video:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Tencent%20Video.yaml
+    path: "./rule_provider/Tencent_Video"
+    interval: 86400
+  Youku:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Youku.yaml
+    path: "./rule_provider/Youku"
+    interval: 86400
+  WeTV:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/WeTV.yaml
+    path: "./rule_provider/WeTV"
+    interval: 86400
+  ABC:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/ABC.yaml
+    path: "./rule_provider/ABC"
+    interval: 86400
+  Abema TV:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Abema%20TV.yaml
+    path: "./rule_provider/Abema_TV"
+    interval: 86400
+  Amazon:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Amazon.yaml
+    path: "./rule_provider/Amazon"
+    interval: 86400
+  Apple News:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Apple%20News.yaml
+    path: "./rule_provider/Apple_News"
+    interval: 86400
+  Apple TV:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Apple%20TV.yaml
+    path: "./rule_provider/Apple_TV"
+    interval: 86400
+  Bahamut:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Bahamut.yaml
+    path: "./rule_provider/Bahamut"
+    interval: 86400
+  BBC iPlayer:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/BBC%20iPlayer.yaml
+    path: "./rule_provider/BBC_iPlayer"
+    interval: 86400
+  DAZN:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/DAZN.yaml
+    path: "./rule_provider/DAZN"
+    interval: 86400
+  Discovery Plus:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Discovery%20Plus.yaml
+    path: "./rule_provider/Discovery_Plus"
+    interval: 86400
+  Disney Plus:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Disney%20Plus.yaml
+    path: "./rule_provider/Disney_Plus"
+    interval: 86400
+  encoreTVB:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/encoreTVB.yaml
+    path: "./rule_provider/encoreTVB"
+    interval: 86400
+  Fox Now:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Fox%20Now.yaml
+    path: "./rule_provider/Fox_Now"
+    interval: 86400
+  Fox+:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Fox%2B.yaml
+    path: "./rule_provider/Fox+"
+    interval: 86400
+  HBO Go:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/HBO%20Go.yaml
+    path: "./rule_provider/HBO_Go"
+    interval: 86400
+  HBO Max:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/HBO%20Max.yaml
+    path: "./rule_provider/HBO_Max"
+    interval: 86400
+  Hulu Japan:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Hulu%20Japan.yaml
+    path: "./rule_provider/Hulu_Japan"
+    interval: 86400
+  Hulu:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Hulu.yaml
+    path: "./rule_provider/Hulu"
+    interval: 86400
+  Japonx:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Japonx.yaml
+    path: "./rule_provider/Japonx"
+    interval: 86400
+  JOOX:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/JOOX.yaml
+    path: "./rule_provider/JOOX"
+    interval: 86400
+  KKBOX:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/KKBOX.yaml
+    path: "./rule_provider/KKBOX"
+    interval: 86400
+  KKTV:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/KKTV.yaml
+    path: "./rule_provider/KKTV"
+    interval: 86400
+  Line TV:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Line%20TV.yaml
+    path: "./rule_provider/Line_TV"
+    interval: 86400
+  myTV SUPER:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/myTV%20SUPER.yaml
+    path: "./rule_provider/myTV_SUPER"
+    interval: 86400
+  Pandora:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Pandora.yaml
+    path: "./rule_provider/Pandora"
+    interval: 86400
+  PBS:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/PBS.yaml
+    path: "./rule_provider/PBS"
+    interval: 86400
+  Pornhub:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Pornhub.yaml
+    path: "./rule_provider/Pornhub"
+    interval: 86400
+  Soundcloud:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/Soundcloud.yaml
+    path: "./rule_provider/Soundcloud"
+    interval: 86400
+  ViuTV:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Media/ViuTV.yaml
+    path: "./rule_provider/ViuTV"
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Telegram.yaml
+    path: "./rule_provider/Telegram"
+    interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Steam.yaml
+    path: "./rule_provider/Steam"
+    interval: 86400
+  Speedtest:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Speedtest.yaml
+    path: "./rule_provider/Speedtest"
+    interval: 86400
+  PayPal:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/PayPal.yaml
+    path: "./rule_provider/PayPal"
+    interval: 86400
+  Microsoft:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Microsoft.yaml
+    path: "./rule_provider/Microsoft"
+    interval: 86400
+  PROXY:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Proxy.yaml
+    path: "./rule_provider/Proxy"
+    interval: 86400
+  Domestic:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Domestic.yaml
+    path: "./rule_provider/Domestic"
+    interval: 86400
+  Apple:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Apple.yaml
+    path: "./rule_provider/Apple"
+    interval: 86400
+  Google FCM:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Google%20FCM.yaml
+    path: "./rule_provider/Google FCM"
+    interval: 86400
+  Scholar:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/Scholar.yaml
+    path: "./rule_provider/Scholar"
+    interval: 86400
+  Domestic IPs:
+    type: http
+    behavior: ipcidr
+    url: https://dler.cloud/Rules/Clash/Provider/Domestic%20IPs.yaml
+    path: "./rule_provider/Domestic_IPs"
+    interval: 86400
+  LAN:
+    type: http
+    behavior: classical
+    url: https://dler.cloud/Rules/Clash/Provider/LAN.yaml
+    path: "./rule_provider/LAN"
+    interval: 86400
+script:
+  code: |
+    def main(ctx, metadata):
+        ruleset_action = {"Reject": "AdBlock",
+            "Special": "DIRECT",
+            "Netflix": "Netflix",
+            "Spotify": "Spotify",
+            "YouTube": "Youtube",
+            "Disney Plus": "Disney",
+            "Bilibili": "Bilibili",
+            "IQ": "Asian TV",
+            "IQIYI": "Asian TV",
+            "Letv": "Asian TV",
+            "Netease Music": "Asian TV",
+            "Tencent Video": "Asian TV",
+            "Youku": "Asian TV",
+            "WeTV": "Asian TV",
+            "ABC": "Global TV",
+            "Abema TV": "Global TV",
+            "Amazon": "Global TV",
+            "Apple News": "Global TV",
+            "Apple TV": "Global TV",
+            "Bahamut": "Bahamut",
+            "BBC iPlayer": "Global TV",
+            "DAZN": "DAZN",
+            "Discovery Plus": "Discovery Plus",
+            "encoreTVB": "Global TV",
+            "Fox Now": "Global TV",
+            "Fox+": "Global TV",
+            "HBO Go": "HBO Go",
+            "HBO Max": "HBO Max",
+            "Hulu Japan": "Global TV",
+            "Hulu": "Global TV",
+            "Japonx": "Global TV",
+            "JOOX": "Global TV",
+            "KKBOX": "Global TV",
+            "KKTV": "Global TV",
+            "Line TV": "Global TV",
+            "myTV SUPER": "Global TV",
+            "Pandora": "Global TV",
+            "PBS": "Global TV",
+            "Pornhub": "Pornhub",
+            "Soundcloud": "Global TV",
+            "ViuTV": "Global TV",
+            "Telegram": "Telegram",
+            "Steam": "Steam",
+            "Speedtest": "Speedtest",
+            "PayPal": "PayPal",
+            "Microsoft": "Microsoft",
+            "Apple": "Apple",
+            "Google FCM": "Google FCM",
+            "Scholar": "Scholar",
+            "PROXY": "Proxy",
+            "Domestic": "Domestic",
+            "Domestic IPs": "Domestic",
+            "LAN": "DIRECT"
+          }
+
+        port = int(metadata["dst_port"])
+
+        if metadata["network"] == "UDP":
+            if port == 443:
+                ctx.log('[Script] matched QUIC traffic use reject')
+                return "REJECT"
+
+        port_list = [21, 22, 23, 53, 80, 123, 143, 194, 443, 465, 587, 853, 993, 995, 998, 2052, 2053, 2082, 2083, 2086, 2095, 2096, 5222, 5228, 5229, 5230, 8080, 8443, 8880, 8888, 8889]
+        if port not in port_list:
+            ctx.log('[Script] not common port use direct')
+            return "DIRECT"
+
+        if metadata["dst_ip"] == "":
+            metadata["dst_ip"] = ctx.resolve_ip(metadata["host"])
+
+        for ruleset in ruleset_action:
+            if ctx.rule_providers[ruleset].match(metadata):
+                return ruleset_action[ruleset]
+
+        if metadata["dst_ip"] == "":
+            return "DIRECT"
+
+        code = ctx.geoip(metadata["dst_ip"])
+        if code == "CN":
+            ctx.log('[Script] Geoip CN')
+            return "Domestic"
+
+        ctx.log('[Script] FINAL')
+        return "Others"
 rules:
+- DST-PORT,7895,REJECT
+- DST-PORT,7892,REJECT
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- RULE-SET,Reject,AdBlock
+- RULE-SET,Special,DIRECT
+- RULE-SET,Netflix,Netflix
+- RULE-SET,Spotify,Spotify
+- RULE-SET,YouTube,Youtube
+- RULE-SET,Disney Plus,Disney
+- RULE-SET,Bilibili,Bilibili
+- RULE-SET,IQ,Asian TV
+- RULE-SET,IQIYI,Asian TV
+- RULE-SET,Letv,Asian TV
+- RULE-SET,Netease Music,Asian TV
+- RULE-SET,Tencent Video,Asian TV
+- RULE-SET,Youku,Asian TV
+- RULE-SET,WeTV,Asian TV
+- RULE-SET,ABC,Global TV
+- RULE-SET,Abema TV,Global TV
+- RULE-SET,Amazon,Global TV
+- RULE-SET,Apple News,Global TV
+- RULE-SET,Apple TV,Global TV
+- RULE-SET,Bahamut,Bahamut
+- RULE-SET,BBC iPlayer,Global TV
+- RULE-SET,DAZN,DAZN
+- RULE-SET,Discovery Plus,Discovery Plus
+- RULE-SET,encoreTVB,Global TV
+- RULE-SET,Fox Now,Global TV
+- RULE-SET,Fox+,Global TV
+- RULE-SET,HBO Go,HBO Go
+- RULE-SET,HBO Max,HBO Max
+- RULE-SET,Hulu Japan,Global TV
+- RULE-SET,Hulu,Global TV
+- RULE-SET,Japonx,Global TV
+- RULE-SET,JOOX,Global TV
+- RULE-SET,KKBOX,Global TV
+- RULE-SET,KKTV,Global TV
+- RULE-SET,Line TV,Global TV
+- RULE-SET,myTV SUPER,Global TV
+- RULE-SET,Pandora,Global TV
+- RULE-SET,PBS,Global TV
+- RULE-SET,Pornhub,Pornhub
+- RULE-SET,Soundcloud,Global TV
+- RULE-SET,ViuTV,Global TV
+- RULE-SET,Telegram,Telegram
+- RULE-SET,Steam,Steam
+- RULE-SET,Speedtest,Speedtest
+- RULE-SET,PayPal,PayPal
+- RULE-SET,Microsoft,Microsoft
+- RULE-SET,Apple,Apple
+- RULE-SET,Google FCM,Google FCM
+- RULE-SET,Scholar,Scholar
+- RULE-SET,PROXY,Proxy
+- RULE-SET,Domestic,Domestic
+- RULE-SET,Domestic IPs,Domestic
+- RULE-SET,LAN,DIRECT
+- GEOIP,CN,Domestic
+- MATCH,Others
