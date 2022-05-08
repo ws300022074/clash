@@ -49,6 +49,7 @@ proxy-groups:
   - 香港-莞港
   - 新加坡-广港
   - 新加坡-莞港
+  - 东京-azhk
 - name: Domestic
   type: select
   proxies:
