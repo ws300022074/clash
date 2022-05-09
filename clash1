@@ -31,7 +31,7 @@ proxies:
   udp: true
   sni: tkbug.infpro.top
   skip-cert-verify: false
-  - name: 东京-泸日
+- name: 东京-泸日
   type: trojan
   server: china.changlian-axecc.898868.xyz
   port: 52806
