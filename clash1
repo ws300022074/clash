@@ -31,14 +31,6 @@ proxies:
   udp: true
   sni: tkbug.infpro.top
   skip-cert-verify: false
-- name: 东京-泸日
-  type: trojan
-  server: china.changlian-axecc.898868.xyz
-  port: 52806
-  password: Liangcye19970528520
-  udp: true
-  sni: jparm.infpro.top
-  skip-cert-verify: false
 proxy-groups:
 - name: Auto - UrlTest
   type: url-test
