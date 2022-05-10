@@ -15,9 +15,9 @@ proxies:
   udp: true
   sni: sgarm01.infpro.top
   skip-cert-verify: false
-- name: 新加坡 | 莞港
+- name: 新加坡 | az
   type: trojan
-  server: china.ct.a.898868.xyz
+  server: azhk200.infpro.top
   port: 52814
   password: Liangcye19970528520
   udp: true
