@@ -1,12 +1,12 @@
 ---
 proxies:
 - name: 香港az
-  type: ss
+  type: trojan
   server: azhk200.infpro.top
   port: 52801
-  cipher: aes-256-gcm
   password: Liangcye19970528520
   udp: true
+  sni: azhk200.infpro.top
 - name: 香港hk
   type: trojan
   server: azhk.infpro.top
