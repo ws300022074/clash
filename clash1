@@ -1,6 +1,20 @@
 ---
 proxies:
-- name: 香港 | 莞港
+- name: 香港az
+  type: ss
+  server: azhk200.infpro.top
+  port: 52801
+  cipher: aes-256-gcm
+  password: Liangcye19970528520
+  udp: true
+- name: 香港hk
+  type: trojan
+  server: azhk.infpro.top
+  port: 52801
+  password: Liangcye19970528520
+  udp: true
+  sni: azhk.infpro.top
+- name: 香港vm | 莞港
   type: ss
   server: china.ct.a.898868.xyz
   port: 52801
