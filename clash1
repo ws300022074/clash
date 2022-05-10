@@ -1,13 +1,13 @@
 ---
 proxies:
-- name: 香港-莞港
+- name: 香港 | 莞港
   type: ss
   server: china.ct.a.898868.xyz
   port: 52801
   cipher: aes-256-gcm
   password: Liangcye19970528520
   udp: true
-- name: 新加坡-广港
+- name: 新加坡 | 广港
   type: trojan
   server: relay.gzbgppro.entrance1-fp.icu
   port: 52810
@@ -15,7 +15,7 @@ proxies:
   udp: true
   sni: sgarm01.infpro.top
   skip-cert-verify: false
-- name: 新加坡-莞港
+- name: 新加坡 | 莞港
   type: trojan
   server: china.ct.a.898868.xyz
   port: 52814
@@ -23,11 +23,107 @@ proxies:
   udp: true
   sni: sgbug.infpro.top
   skip-cert-verify: false
-- name: 东京-azhk
+- name: 东京 | hk
   type: trojan
   server: azhk.infpro.top
   port: 52824
   password: Liangcye19970528520
   udp: true
   sni: tkbug.infpro.top
+  skip-cert-verify: false
+- name: 东京 | az
+  type: trojan
+  server: azhk200.infpro.top
+  port: 52806
+  password: Liangcye19970528520
+  udp: true
+  sni: jparm.infpro.top
+  skip-cert-verify: false
+- name: 大阪 | hk
+  type: trojan
+  server: azhk.infpro.top
+  port: 52809
+  password: Liangcye19970528520
+  udp: true
+  sni: osarm.infpro.top
+  skip-cert-verify: false
+- name: 春川 | az
+  type: trojan
+  server: azhk200.infpro.top
+  port: 52817
+  password: Liangcye19970528520
+  udp: true
+  sni: ccbug.infpro.top
+  skip-cert-verify: false
+- name: 首尔 | hk
+  type: trojan
+  server: azhk.infpro.top
+  port: 52822
+  password: Liangcye19970528520
+  udp: true
+  sni: sebug.infpro.top
+  skip-cert-verify: false
+- name: 首尔 | az
+  type: trojan
+  server: azhk200.infpro.top
+  port: 52807
+  password: Liangcye19970528520
+  udp: true
+  sni: seamd.infpro.top
+  skip-cert-verify: false
+- name: 悉尼 | hk
+  type: trojan
+  server: azhk.infpro.top
+  port: 52828
+  password: Liangcye19970528520
+  udp: true
+  sni: snarm.infpro.top
+  skip-cert-verify: false
+- name: 墨尔本 | hk
+  type: trojan
+  server: azhk.infpro.top
+  port: 52827
+  password: Liangcye19970528520
+  udp: true
+  sni: mebarm.infpro.top
+  skip-cert-verify: false
+- name: 迪拜 | az
+  type: trojan
+  server: azhk200.infpro.top
+  port: 52804
+  password: Liangcye19970528520
+  udp: true
+  sni: dbarm.infpro.top
+  skip-cert-verify: false
+- name: 孟买 | hk
+  type: trojan
+  server: azhk.infpro.top
+  port: 52825
+  password: Liangcye19970528520
+  udp: true
+  sni: mbarm.infpro.top
+  skip-cert-verify: false
+- name: 海德拉巴 | hk
+  type: trojan
+  server: azhk.infpro.top
+  port: 52823
+  password: Liangcye19970528520
+  udp: true
+  sni: hdarm.infpro.top
+  skip-cert-verify: false
+- name: 马赛 | hk
+  type: trojan
+  server: azhk.infpro.top
+  port: 52826
+  password: Liangcye19970528520
+  udp: true
+  sni: msarm.infpro.top
+  skip-cert-verify: false
+- name: 圣何塞 | hk
+  type: trojan
+  server: azhk.infpro.top
+  port: 52819
+  password: Liangcye19970528520
+  udp: true
+  sni: sjbug.infpro.top
   skip-cert-verify: false
