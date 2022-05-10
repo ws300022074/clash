@@ -127,3 +127,27 @@ proxies:
   udp: true
   sni: sjbug.infpro.top
   skip-cert-verify: false
+- name: 圣何塞 | 莞港
+  type: trojan
+  server: china.ct.a.898868.xyz
+  port: 52805
+  password: Liangcye19970528520
+  udp: true
+  sni: sjamd.infpro.top
+  skip-cert-verify: false
+- name: 阿什本 | 莞港
+  type: trojan
+  server: china.ct.a.898868.xyz
+  port: 52812
+  password: Liangcye19970528520
+  udp: true
+  sni: abarm.infpro.top
+  skip-cert-verify: false
+- name: 凤凰城 | 莞港
+  type: trojan
+  server: china.ct.a.898868.xyz
+  port: 52811
+  password: Liangcye19970528520
+  udp: true
+  sni: pxarm.infpro.top
+  skip-cert-verify: false
