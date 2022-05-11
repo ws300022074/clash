@@ -21,14 +21,6 @@ proxies:
   cipher: aes-256-gcm
   password: Liangcye19970528520
   udp: true
-- name: 新加坡 | 广港
-  type: trojan
-  server: relay.gzbgppro.entrance1-fp.icu
-  port: 52810
-  password: Liangcye19970528520
-  udp: true
-  sni: sgarm01.infpro.top
-  skip-cert-verify: false
 - name: 新加坡 | az
   type: trojan
   server: azhk200.infpro.top
@@ -109,30 +101,6 @@ proxies:
   udp: true
   sni: dbarm.infpro.top
   skip-cert-verify: false
-- name: 孟买 | hk
-  type: trojan
-  server: azhk.infpro.top
-  port: 52825
-  password: Liangcye19970528520
-  udp: true
-  sni: mbarm.infpro.top
-  skip-cert-verify: false
-- name: 海德拉巴 | hk
-  type: trojan
-  server: azhk.infpro.top
-  port: 52823
-  password: Liangcye19970528520
-  udp: true
-  sni: hdarm.infpro.top
-  skip-cert-verify: false
-- name: 马赛 | hk
-  type: trojan
-  server: azhk.infpro.top
-  port: 52826
-  password: Liangcye19970528520
-  udp: true
-  sni: msarm.infpro.top
-  skip-cert-verify: false
 - name: 圣何塞 | hk
   type: trojan
   server: azhk.infpro.top
@@ -149,19 +117,4 @@ proxies:
   udp: true
   sni: sjamd.infpro.top
   skip-cert-verify: false
-- name: 阿什本 | 莞港
-  type: trojan
-  server: china.ct.a.898868.xyz
-  port: 52812
-  password: Liangcye19970528520
-  udp: true
-  sni: abarm.infpro.top
-  skip-cert-verify: false
-- name: 凤凰城 | 莞港
-  type: trojan
-  server: china.ct.a.898868.xyz
-  port: 52811
-  password: Liangcye19970528520
-  udp: true
-  sni: pxarm.infpro.top
-  skip-cert-verify: false
+
