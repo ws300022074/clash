@@ -77,22 +77,6 @@ proxies:
   udp: true
   sni: seamd.infpro.top
   skip-cert-verify: false
-- name: 悉尼 | hk
-  type: trojan
-  server: azhk.infpro.top
-  port: 52828
-  password: Liangcye19970528520
-  udp: true
-  sni: snarm.infpro.top
-  skip-cert-verify: false
-- name: 墨尔本 | hk
-  type: trojan
-  server: azhk.infpro.top
-  port: 52827
-  password: Liangcye19970528520
-  udp: true
-  sni: mebarm.infpro.top
-  skip-cert-verify: false
 - name: 迪拜 | az
   type: trojan
   server: azhk200.infpro.top
